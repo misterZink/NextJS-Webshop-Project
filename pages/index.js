@@ -11,6 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <h1>DOG SHOP</h1>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
