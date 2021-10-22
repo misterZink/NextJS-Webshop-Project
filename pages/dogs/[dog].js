@@ -1,8 +1,9 @@
 import getDogPictures, {getDogBreeds} from "../../helpers/ApiHelper";
 
 
-export default function Dog({dog}) {
-    console.log(dog)
+export default function Dog({dogPictures, breed}) {
+    console.log("Breed:", breed);
+    console.log("Pictures:", dogPictures)
     return (<>
         <h1>Test</h1>
     </>);
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
     return {paths, fallback: false};
 }
 
-export async function getStaticProps({params}) {
-    const dogPictures = await getDogPictures(params.dog);
-    return {props: {dog: dogPictures}};
+export async function getStaticProps({params: {dog}}) {
+    const dogPictures = await getDogPictures(dog);
+    return {props: {dogPictures: dogPictures, breed: dog}};
 }
