@@ -1,16 +1,29 @@
 import getDogPictures, {getDogBreeds} from "../../helpers/ApiHelper";
+import Image from "next/image";
+
 
 
 export default function Dog({dogPictures, breed}) {
-    console.log("Breed:", breed);
-    console.log("Pictures:", dogPictures)
     return (<>
-        <h1>Test</h1>
+        <main>
+            <div>
+                <h1>{breed}</h1>
+                <Image
+                    width={200}
+                    height={200}
+                    src={dogPictures[2]}
+                    alt={breed}
+                />
+                <h2>Price: 3000kr</h2>
+                <button>Add to basket</button>
+            </div>
+        </main>
     </>);
 };
 
 export async function getStaticPaths() {
     const dogNames = await getDogBreeds()
+    console.log(dogNames)
     const paths = dogNames.map((dog) => ({
         params: {dog: dog}
     }))
