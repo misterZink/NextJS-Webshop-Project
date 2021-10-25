@@ -1,20 +1,33 @@
 import getDogPictures, {getDogBreeds} from "../../helpers/ApiHelper";
 import Image from "next/image";
-
-
+import styles from "../../styles/dog.module.css";
 
 export default function Dog({dogPictures, breed}) {
+
+    const dogNames = require('dog-names');
+
+    function randomPrice(){
+        const max = 10000;
+        const min = 2000;
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    breed = breed.charAt(0).toUpperCase() + breed.slice(1); // toUppercase the first letter
+
     return (<>
-        <main>
+        <main className={styles.main}>
             <div>
-                <h1>{breed}</h1>
                 <Image
-                    width={200}
-                    height={200}
-                    src={dogPictures[2]}
+                    width={400}
+                    height={500}
+                    src={dogPictures[0]}
                     alt={breed}
                 />
-                <h2>Price: 3000kr</h2>
+            </div>
+            <div className={styles.doginfo}>
+                <h1>{dogNames.allRandom()}</h1>
+                <h2>Breed: {breed}</h2>
+                <h2>Price: {randomPrice()}kr</h2>
                 <button>Add to basket</button>
             </div>
         </main>
@@ -23,7 +36,6 @@ export default function Dog({dogPictures, breed}) {
 
 export async function getStaticPaths() {
     const dogNames = await getDogBreeds()
-    console.log(dogNames)
     const paths = dogNames.map((dog) => ({
         params: {dog: dog}
     }))
