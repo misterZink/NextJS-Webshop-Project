@@ -17,6 +17,7 @@ export default function Home() {
       <h1>Do my commits count now?!!</h1>
       <h1>Third time's the charm??</h1>
         <h1>ffs m0n</h1>
+        <h1>it works?!</h1>
 
       <Image
         width={2000}
