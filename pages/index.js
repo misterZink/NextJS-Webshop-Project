@@ -15,6 +15,7 @@ export default function Home() {
       <h1>Welcome to Dog site</h1>
       <h1>Do my commits count now?</h1>
       <h1>Do my commits count now?!!</h1>
+      <h1>Third time's the charm??</h1>
 
       <Image
         width={2000}
