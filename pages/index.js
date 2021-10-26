@@ -12,6 +12,7 @@ export default function Home() {
       </Head>
 
       <h1>DOG SHOP</h1>
+      <h1>Does my commits work now?</h1>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
