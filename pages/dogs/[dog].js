@@ -1,21 +1,66 @@
+import Head from "next/head";
 import getDogPictures, {getDogBreeds} from "../../helpers/ApiHelper";
 import Image from "next/image";
 
-
-
 export default function Dog({dogPictures, breed}) {
+
+    const dogNames = require('dog-names');
+
+    function randomPrice() {
+        const max = 10000;
+        const min = 2000;
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    breed = breed.charAt(0).toUpperCase() + breed.slice(1); // toUppercase the first letter
+
     return (<>
-        <main>
-            <div>
-                <h1>{breed}</h1>
-                <Image
-                    width={200}
-                    height={200}
-                    src={dogPictures[2]}
-                    alt={breed}
-                />
-                <h2>Price: 3000kr</h2>
-                <button>Add to basket</button>
+        <main className="flex place-content-center my-72">
+            <Head>
+                <title>Dog shop | {breed}</title>
+            </Head>
+            <div className="border-2  border-gray-300 rounded-lg">
+                <div className="container flex xl:h-[500px] ">
+                    <div>
+                        <Image className="rounded-l-lg"
+                               width={400}
+                               height={500}
+                               src={dogPictures[0]}
+                               alt={breed}
+                        />
+                    </div>
+                    <div className="flex flex-col px-8 py-2">
+                        <h1 className="text-gray-900 font-semibold text-4xl text-center">
+                            {dogNames.allRandom()}
+                        </h1>
+
+                        <h2 className="text-gray-700 text-lg mb-8 text-center"><span
+                            className="font-semibold">Breed:</span> {breed}</h2>
+                        <hr/>
+                        <h2 className="font-semibold">Description:</h2>
+                        <p className="flex-grow max-w-4xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vestibulum at nisi sit amet est efficitur volutpat eu nec quam. Sed ullamcorper dignissim
+                            varius. Nulla cursus tortor eget sapien fermentum convallis. Nunc at enim lectus. Etiam
+                            condimentum libero in turpis molestie lacinia. Etiam id dictum tortor. Vivamus ligula risus,
+                            tristique ut ante id, volutpat varius erat. Curabitur tincidunt at massa sed feugiat. Aenean
+                            quis varius tortor. Phasellus ac ullamcorper mauris. Nullam condimentum luctus lacus ac
+                            feugiat. Fusce in ipsum volutpat, hendrerit nibh vel, rhoncus felis. Phasellus eleifend
+                            augue elit, eget mattis nisi dignissim quis. Vestibulum ac libero pellentesque, malesuada
+                            elit ac, tincidunt augue. Pellentesque auctor, sem quis convallis pretium, dui arcu suscipit
+                            ex, at facilisis neque leo id dui. Etiam hendrerit maximus enim nec congue. Donec rutrum
+                            lorem quis porta pharetra. Praesent magna enim, fringilla at mauris in, efficitur gravida
+                            nisi. Nam vestibulum posuere ante, sit amet viverra risus cursus id. Fusce ultricies
+                            consectetur odio, quis faucibus urna tincidunt eget. Class aptent taciti sociosqu ad litora
+                            torquent per conubia nostra, per inceptos himenaeos.
+                        </p>
+                        <hr/>
+                        <h2 className="font-semibold text-2xl text-center text-red-500">{randomPrice()} kr</h2>
+                        <button
+                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded content-center mt-2">Add
+                            to basket
+                        </button>
+                    </div>
+                </div>
             </div>
         </main>
     </>);
@@ -23,7 +68,6 @@ export default function Dog({dogPictures, breed}) {
 
 export async function getStaticPaths() {
     const dogNames = await getDogBreeds()
-    console.log(dogNames)
     const paths = dogNames.map((dog) => ({
         params: {dog: dog}
     }))
