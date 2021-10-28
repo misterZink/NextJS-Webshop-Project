@@ -1,18 +1,22 @@
-import Head from "next/head";
 import getDogPictures, {getDogBreeds} from "../../helpers/ApiHelper";
+import useCart from "../../lib/hooks/useCart";
+import Head from "next/head";
 import Image from "next/image";
+import {CART_ACTIONS} from "../../lib/reducers/CartReducer";
 
 export default function Dog({dogPictures, breed}) {
 
-    const dogNames = require('dog-names');
+    const dogName = require('dog-names').allRandom();
+    const price = randomPrice();
+    const cart = useCart();
+    console.log(cart)
+    breed = breed.charAt(0).toUpperCase() + breed.slice(1); // toUppercase the first letter
 
     function randomPrice() {
         const max = 10000;
         const min = 2000;
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-
-    breed = breed.charAt(0).toUpperCase() + breed.slice(1); // toUppercase the first letter
 
     return (<>
         <main className="flex place-content-center my-72">
@@ -31,7 +35,7 @@ export default function Dog({dogPictures, breed}) {
                     </div>
                     <div className="flex flex-col px-8 py-2">
                         <h1 className="text-gray-900 font-semibold text-4xl text-center">
-                            {dogNames.allRandom()}
+                            {dogName}
                         </h1>
 
                         <h2 className="text-gray-700 text-lg mb-8 text-center"><span
@@ -54,9 +58,9 @@ export default function Dog({dogPictures, breed}) {
                             torquent per conubia nostra, per inceptos himenaeos.
                         </p>
                         <hr/>
-                        <h2 className="font-semibold text-2xl text-center text-red-500">{randomPrice()} kr</h2>
-                        <button
-                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded content-center mt-2">Add
+                        <h2 className="font-semibold text-2xl text-center text-red-500">{price} kr</h2>
+                        <button onClick={() => cart.cartDispatch({type: CART_ACTIONS.ADD_TO_CART, dogName: dogName})}
+                                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded content-center mt-2">Add
                             to basket
                         </button>
                     </div>
@@ -67,8 +71,8 @@ export default function Dog({dogPictures, breed}) {
 };
 
 export async function getStaticPaths() {
-    const dogNames = await getDogBreeds()
-    const paths = dogNames.map((dog) => ({
+    const dogBreeds = await getDogBreeds()
+    const paths = dogBreeds.map((dog) => ({
         params: {dog: dog}
     }))
 
