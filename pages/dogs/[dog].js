@@ -59,10 +59,15 @@ export default function Dog({dogPictures, breed}) {
                         </p>
                         <hr/>
                         <h2 className="font-semibold text-2xl text-center text-red-500">{price} kr</h2>
-                        <button onClick={() => cart.cartDispatch({type: CART_ACTIONS.ADD_TO_CART, dogName: dogName})}
+                        <button onClick={() => cart.cartDispatch({type: CART_ACTIONS.ADD_TO_CART, dogName: dogName, price: price})}
                                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded content-center mt-2">Add
                             to basket
                         </button>
+                        <button onClick={() => cart.cartDispatch({type: CART_ACTIONS.REMOVE_FROM_CART, dogName: dogName})}
+                                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded content-center mt-2">RESET
+                            to basket
+                        </button>
+
                     </div>
                 </div>
             </div>
