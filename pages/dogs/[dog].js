@@ -19,7 +19,7 @@ export default function Dog({dogPictures, breed}) {
     }
 
     return (<>
-        <main className="flex place-content-center my-72">
+        <main className="flex place-content-center my-40">
             <Head>
                 <title>Dog shop | {breed}</title>
             </Head>
