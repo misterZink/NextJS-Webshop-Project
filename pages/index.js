@@ -37,7 +37,7 @@ export default function Home() {
           </p>
 
           <Link passHref href={"/pickadog"}>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+            <button className="hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
               Go to pick dog site!
             </button>
           </Link>

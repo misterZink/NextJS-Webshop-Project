@@ -7,60 +7,97 @@ export default function kort({ dogPictures }) {
   return (
     <>
       <div>
-        <h1>dogPictures</h1>
-        <Image width={200} height={200} src={dogPictures[0]} alt="pug" />
-        <Link passHref href={"/dogs/pug"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
-            </button>
-          </div>
-        </Link>
+        <h1 className="text-center mb-12 text-3xl mt-10">Dog picture</h1>
+      </div>
 
-        <Image width={200} height={200} src={dogPictures[1]} alt="boxer" />
-        <Link passHref href={"/dogs/boxer"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+      <div className="flex flex-row  flex-wrap justify-around  ">
+        <div className="flex  flex-col w-60   ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[0]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/pug"}>
+            <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
               Go Cart page!
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
+        <div className="flex flex flex-col w-60  ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[1]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/boxer"}>
+            <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+              Go Cart page!
+            </button>
+          </Link>
+        </div>
 
-        <Image width={200} height={200} src={dogPictures[2]} alt="boxer" />
-        <Link passHref href={"/dogs/akita"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+        <div className="flex  flex-col w-60   ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[2]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/akita"}>
+            <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
               Go Cart page!
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
+        <div className="flex  flex-col w-60 ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[3]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/dalmatian"}>
+            <button className="hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+              Go Cart page!
+            </button>
+          </Link>
+        </div>
 
-        <Image width={200} height={200} src={dogPictures[3]} alt="boxer" />
-        <Link passHref href={"/dogs/dalmatian"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+        <div className="flex  flex-col w-60 ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[4]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/puggle"}>
+            <button className="hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
               Go Cart page!
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
-        <Image width={200} height={200} src={dogPictures[4]} alt="boxer" />
-        <Link passHref href={"/dogs/puggle"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
+        <div className="flex  flex-col w-60 ">
+          <Image
+            className="rounded-tr-md rounded-tl-md  rounded-bl-md rounded-br-md"
+            width={200}
+            height={200}
+            src={dogPictures[5]}
+            alt="pug"
+          />
+          <Link passHref href={"/dogs/shiba"}>
+            <button className="  hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
               Go Cart page!
             </button>
-          </div>
-        </Link>
-
-        <Image width={200} height={200} src={dogPictures[5]} alt="boxer" />
-        <Link passHref href={"/dogs/shiba"}>
-          <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
-            </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </>
   );
