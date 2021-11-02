@@ -20,7 +20,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/pug"}>
             <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
@@ -34,7 +34,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/boxer"}>
             <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
@@ -49,7 +49,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/akita"}>
             <button className=" hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
@@ -63,7 +63,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/dalmatian"}>
             <button className="hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
@@ -78,7 +78,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/puggle"}>
             <button className="hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
@@ -93,7 +93,7 @@ export default function kort({ dogPictures }) {
           />
           <Link passHref href={"/dogs/shiba"}>
             <button className="  hover:scale-110 transition duration-500 ease-in-out; mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded content-center Link">
-              Go Cart page!
+              More info!
             </button>
           </Link>
         </div>
