@@ -19,7 +19,7 @@ export default function Varukorg() {
      * Updates what dogs the customer has in their basket.
      */
     function displayDogs() {
-        return dogs.map(dog => <div key={dog.dogName}><span className="block ...">{dog.dogName}</span></div>)
+        return dogs.map(dog => <div key={dog.dogName}><span className="block ...">{dog.dogName}&emsp;&emsp;&emsp;&emsp;{dog.price} :-</span></div>)
     }
 
     return (
