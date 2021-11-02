@@ -9,7 +9,6 @@ export default function Dog({dogPictures, breed}) {
     const dogName = require('dog-names').allRandom();
     const price = randomPrice();
     const cart = useCart();
-    console.log(cart)
     breed = breed.charAt(0).toUpperCase() + breed.slice(1); // toUppercase the first letter
 
     function randomPrice() {
