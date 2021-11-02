@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function kort({ dogPictures }) {
-  console.log(dogPictures);
   return (
     <>
       <div>
